@@ -1,5 +1,5 @@
 plugins {
-    kotlin("js") version "1.4.10"
+    kotlin("js") version "1.9.25"
 }
 group = "me.phillip"
 version = "1.0-SNAPSHOT"
