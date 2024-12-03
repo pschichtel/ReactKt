@@ -7,8 +7,8 @@ data class Model(val elems: List<String>, val interval: Int?)
 
 sealed class Action {
     data class ButtonClicked(val value: String) : Action()
-    object StartTimer : Action()
-    object TimerTriggered : Action()
+    data object StartTimer : Action()
+    data object TimerTriggered : Action()
 }
 
 fun renderCount(elems: List<String>): HTMLElement {

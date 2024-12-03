@@ -1,28 +1,33 @@
+import org.jetbrains.kotlin.gradle.targets.js.dsl.WebpackRulesDsl
+
 plugins {
-    kotlin("js") version "2.1.0"
+    alias(libs.plugins.kotlinJs)
 }
+
 group = "me.phillip"
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    jcenter()
-    maven {
-        url = uri("https://dl.bintray.com/kotlin/kotlinx")
-    }
 }
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.7.2")
+    implementation(libs.kotlinxHtml)
 }
 kotlin {
+    jvmToolchain(21)
     js {
         browser {
             binaries.executable()
+            fun WebpackRulesDsl.configure() {
+                cssSupport {
+                    enabled = true
+                }
+            }
             webpackTask {
-                cssSupport.enabled = true
+                configure()
             }
             runTask {
-                cssSupport.enabled = true
+                configure()
             }
         }
     }

@@ -1,0 +1,9 @@
+[versions]
+kotlin = "2.1.0"
+kotlinxHtml = "0.11.0"
+
+[libraries]
+kotlinxHtml = { module = "org.jetbrains.kotlinx:kotlinx-html", version.ref = "kotlinxHtml" }
+
+[plugins]
+kotlinJs = { id = "org.jetbrains.kotlin.js", version.ref = "kotlin" }
