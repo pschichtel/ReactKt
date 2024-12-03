@@ -6,4 +6,4 @@ kotlinxHtml = "0.11.0"
 kotlinxHtml = { module = "org.jetbrains.kotlinx:kotlinx-html", version.ref = "kotlinxHtml" }
 
 [plugins]
-kotlinJs = { id = "org.jetbrains.kotlin.js", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

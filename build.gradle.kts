@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.targets.js.dsl.WebpackRulesDsl
 
 plugins {
-    alias(libs.plugins.kotlinJs)
+    alias(libs.plugins.kotlinMultiplatform)
 }
 
 group = "me.phillip"
@@ -10,9 +10,7 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
 }
-dependencies {
-    implementation(libs.kotlinxHtml)
-}
+
 kotlin {
     jvmToolchain(21)
     js {
@@ -28,6 +26,14 @@ kotlin {
             }
             runTask {
                 configure()
+            }
+        }
+    }
+
+    sourceSets {
+        val jsMain by getting {
+            dependencies {
+                implementation(libs.kotlinxHtml)
             }
         }
     }
